@@ -70,8 +70,8 @@ class ProductController extends Controller {
     req : Request<{} , {} , getProduct>,
     res : Response
   ):Promise <void>{
-    const Product = await Query.findProduct(req.body.productId);
-    if(Product == null){
+    const product = await Query.findProduct(req.body.productId);
+    if(product == null){
       this.response({
         res,
         massage : "product not found",
@@ -83,7 +83,8 @@ class ProductController extends Controller {
     this.response({
       res,
       massage : "product successfuly send",
-      code:200
+      code:200,
+      data:product
     });
 
   }
@@ -116,7 +117,7 @@ class ProductController extends Controller {
     this.response({
       res,
       code :201,
-      massage : "product successfuly added"
+      massage : "product successfuly added",
       data : result
     });
       return;
@@ -173,7 +174,12 @@ class ProductController extends Controller {
       });
       return;
     }
-    
+    this.response({
+      res,
+      code:200,
+      massage:"product successfilly deleted",
+      data:result
+    })
   }
 }
 
