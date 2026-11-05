@@ -32,15 +32,7 @@ export default new (class Query {
     ) 
     return rows;
   }
-<<<<<<< HEAD
-  async addProduct(product: Product){}
-  async findProduct(id:string):Promise <Product>{
-    return Product;
-  }
-  async changeproduct(id:string , product : Product){}
-  async removeProduct(id:string){}
-}
-=======
+
     async addProduct(product: Product):Promise<boolean>{
       const query = `
         USE product_db;
@@ -117,4 +109,4 @@ export default new (class Query {
     return result.affectedRows === 1;
     }
   })
->>>>>>> 56908efb285fb0054090b1770e65d5eb46b200f7
+
