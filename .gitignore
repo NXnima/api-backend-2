@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+remote.env
+=======
+.env
+>>>>>>> 56908efb285fb0054090b1770e65d5eb46b200f7
+node_modules
+dist
+backupgit
