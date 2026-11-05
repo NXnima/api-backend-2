@@ -7,35 +7,41 @@ const router: Router = express.Router();
 
 router.get(
   '/menuShowProuct',
-  validator.menuShowProuctsValidator,
+  controller.validate,
+  validator.menuShowProuctsValidator(),
   controller.menuShowProucts
 );
 router.get(
   '/search',
-  validator.searchValidator,
+  controller.validate,
+  validator.searchValidator(),
   controller.search
 );
 router.get(
   '/getProduct',
-  validator.getProductValidator,
+  controller.validate,
+  validator.getProductValidator(),
   controller.getProduct
 );
 router.post(
   '/addProduct',
   isAdmin,
-  validator.changeProductValidator,
+  controller.validate,
+  validator.changeProductValidator(),
   controller.addProduct
 );
 router.put(
   '/changeProduct',
   isAdmin,
-  validator.changeProductValidator,
+  controller.validate,
+  validator.changeProductValidator(),
   controller.changeproduct
 );
 router.delete(
   '/deleteProduct',
   isAdmin,
-  validator.deleteValidator,
+  validator.deleteValidator(),
+  controller.validate,
   controller.deleteProuct
 );
 export default router;

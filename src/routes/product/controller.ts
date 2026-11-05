@@ -31,7 +31,8 @@ class ProductController extends Controller {
         res,
         code:200,
         massage:"end of product list"
-      })
+      });
+      return;
     }
     this.response({
       res,

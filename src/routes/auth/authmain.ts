@@ -6,14 +6,14 @@ const router: Router = express.Router();
 
 router.post(
   '/register',
-  validator.registerValidator,
+  validator.registerValidator(),
   controller.validate,
   controller.register
 );
 
 router.post(
   '/login',
-  validator.loginValidator,
+  validator.loginValidator(),
   controller.validate,
   controller.login
 );

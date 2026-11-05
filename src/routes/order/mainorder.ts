@@ -7,21 +7,21 @@ const router: Router = express.Router();
 
 router.get(
   '/userOrder',
-  validator.userOrderValidator,
+  validator.userOrderValidator(),
   controller.validate,
   controller.userOrder
 );
 
 router.delete(
   '/removeOrderByUser',
-  validator.removeOrderByUserValidator,
+  validator.removeOrderByUserValidator(),
   controller.validate,
   controller.removeOrderByUser
 );
 
 router.delete(
   '/removeOrderByAdmin',
-  validator.removeOrderByAdminValidate,
+  validator.removeOrderByAdminValidate(),
   isAdmin,
   controller.validate,
   controller.removeOrderByAdmin
@@ -29,14 +29,14 @@ router.delete(
 
 router.post(
   '/addOrderByUser',
-  validator.addOrderByUserValidator,
+  validator.addOrderByUserValidator(),
   controller.validate,
   controller.addOrderByUser
 );
 
 router.post(
   '/addOrderByAdmin',
-  validator.addOrderByAdminValidator,
+  validator.addOrderByAdminValidator(),
   controller.validate,
   controller.addOrderByAdmin
 );

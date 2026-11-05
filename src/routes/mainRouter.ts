@@ -7,10 +7,10 @@ import OrderRouter from './order/mainorder.js';
 
 const router: Router = express.Router();
 
-router.use('/auth', authRouter);
-router.use('./product' , ProductRouter);
-router.use('./user' , UserRouter);
-router.use('./order' , OrderRouter);
+router.use('/', authRouter);
+router.use('/' , ProductRouter);
+router.use('/' , UserRouter);
+router.use('/' , OrderRouter);
 router.use(error);
 
 export default router;
